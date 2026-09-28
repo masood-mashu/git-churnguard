@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "git-churnguard": {
+      "command": "python",
+      "args": [
+        "-m",
+        "tools"
+      ],
+      "env": {
+        "STANDARD": "OpenGAP-v0.1.0"
+      }
+    }
+  }
+}

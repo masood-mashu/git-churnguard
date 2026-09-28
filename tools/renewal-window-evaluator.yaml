@@ -1,0 +1,18 @@
+name: renewal-window-evaluator
+version: 1.0.0
+description: "Evaluates account risk tier based on remaining days to contract renewal"
+input_schema:
+  type: object
+  properties:
+    days_to_renewal:
+      type: string
+      description: "Number of calendar days until contract expiration"
+  required:
+    - days_to_renewal
+implementation:
+  type: script
+  path: renewal_window_evaluator.py
+  runtime: python3
+annotations:
+  read_only: true
+  idempotent: true

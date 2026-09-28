@@ -1,0 +1,39 @@
+spec_version: "0.1.0"
+name: git-churnguard
+version: 1.0.0
+description: "Autonomous SaaS Customer Churn Early Warning, Usage Telemetry & ARR Retention Agent"
+author: "masood-mashu"
+license: "Apache-2.0"
+
+model:
+  preferred: "openai:gpt-4o"
+  fallback:
+    - "anthropic:claude-3-5-sonnet"
+    - "openai:gpt-4o-mini"
+  constraints:
+    temperature: 0.1
+    max_tokens: 4096
+
+skills:
+  - saas-churn-early-warning
+  - customer-health-scoring
+
+tools:
+  - usage-drop-detector
+  - account-health-scorer
+  - renewal-window-evaluator
+
+runtime:
+  max_turns: 50
+  timeout: 120
+
+tags:
+  - marketing-sales
+  - churn-prevention
+  - customer-success
+  - saas-metrics
+  - passport-challenge
+
+metadata:
+  passport_id: "aps-churnguard-01"
+  passport_category: "Marketing & sales"

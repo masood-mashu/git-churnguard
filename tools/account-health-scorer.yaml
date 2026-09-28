@@ -1,0 +1,18 @@
+name: account-health-scorer
+version: 1.0.0
+description: "Calculates unified customer health score based on utilization, support tickets, and NPS"
+input_schema:
+  type: object
+  properties:
+    health_factors_json:
+      type: string
+      description: "JSON string with utilization_pct (0-100), open_p1_tickets (int), and nps (0-10)"
+  required:
+    - health_factors_json
+implementation:
+  type: script
+  path: account_health_scorer.py
+  runtime: python3
+annotations:
+  read_only: true
+  idempotent: true

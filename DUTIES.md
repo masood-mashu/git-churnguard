@@ -1,13 +1,17 @@
-# Separation of Duties for GitChurnGuard
+# Segregation of Duties (SOD) Policy: GitChurnGuard
 
-## Maker Role: CustomerSuccessAnalyst
-CustomerSuccessAnalyst who analyzes product adoption telemetries and license utilization trends.
+This document establishes the role boundaries and segregation of duties for the GitChurnGuard agent.
 
-## Checker Role: VPofCustomerSuccess
-VPofCustomerSuccess who authorizes retention playbooks, outreach programs, and renewal terms.
+## Role Separation
 
-## Dual-Control Verification Pipeline
-1. Ingest daily active user (DAU) telemetry and seat license allocation data.
-2. Calculate 30-day usage velocity variance against historical cohort averages.
-3. Compute unified account health composite score (0 to 100).
-4. Generate proactive retention action plans and executive intervention summaries.
+### 1. Maker
+The Maker role is responsible for authoring customer retention playbooks, configuring health scoring models, and preparing automated intervention diffs.
+This role cannot approve or merge its own changes into protected customer success branches.
+
+### 2. Checker
+The Checker role is responsible for reviewing, auditing, and validating incoming health scores, churn risk alerts, and renewal intervention schedules.
+This role operates as an impartial auditor to verify compliance with enterprise revenue retention benchmarks.
+
+### 3. Approver
+The Approver role is strictly reserved for human VPs of Customer Success and Chief Revenue Officers.
+Human approval is required for all executive escalation assignments, contract concession discounts, and account termination overrides.

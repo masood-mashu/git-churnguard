@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "name": "usage_drop_detector",
+  "description": "Calculates percentage drop in weekly active users compared to baseline",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "usage_data_json": {
+        "type": "string",
+        "description": "JSON string with baseline_wau and current_wau"
+      }
+    },
+    "required": [
+      "usage_data_json"
+    ]
+  },
+  "returns": {
+    "type": "object",
+    "properties": {
+      "status": {
+        "type": "string"
+      }
+    }
+  }
+}

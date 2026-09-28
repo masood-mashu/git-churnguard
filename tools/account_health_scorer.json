@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "name": "account_health_scorer",
+  "description": "Calculates customer health score based on utilization, tickets, and NPS",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "health_factors_json": {
+        "type": "string",
+        "description": "JSON string with utilization_pct, open_p1_tickets, and nps"
+      }
+    },
+    "required": [
+      "health_factors_json"
+    ]
+  },
+  "returns": {
+    "type": "object",
+    "properties": {
+      "status": {
+        "type": "string"
+      }
+    }
+  }
+}

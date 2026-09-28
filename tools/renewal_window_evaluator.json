@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "name": "renewal_window_evaluator",
+  "description": "Evaluates account risk tier based on remaining days to contract renewal",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "days_to_renewal": {
+        "type": "string",
+        "description": "Number of calendar days until contract expiration"
+      }
+    },
+    "required": [
+      "days_to_renewal"
+    ]
+  },
+  "returns": {
+    "type": "object",
+    "properties": {
+      "status": {
+        "type": "string"
+      }
+    }
+  }
+}

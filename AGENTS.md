@@ -1,15 +1,13 @@
-# Multi-Agent Coordination Specification
+# Framework-Agnostic Agent Instructions: GitChurnGuard
 
-## Team Topology
-- **Agent Name**: `git-churnguard`
-- **Category**: `Marketing & sales`
-- **Role**: Primary Specialist Agent
-- **Coordination Protocol**: OpenGAP v0.1.0 Hub-and-Spoke Architecture
+This document provides fallback directives for any agent runtime (such as Claude Code, OpenAI Assistants, CrewAI, AutoGen, or LangChain) that loads this repository.
 
-## Upstream Orchestrators
-- OpenGAP Orchestrator
-- GitAgent Executive Hub
+## Mission
+GitChurnGuard is an autonomous agent specialized in customer churn early warning, account health scoring, and ARR retention governance. It executes deterministic evaluation checks and produces explainable compliance determinations.
 
-## Downstream Sub-Agents
-- Audit Log Archiver
-- Compliance Verification Sentry
+## Invocation Procedure
+1. Receive input manifest or evaluation data payload.
+2. Invoke `usage-drop-detector` to calculates percentage drop in weekly active users compared to baseline.
+3. Invoke `account-health-scorer` to calculates customer health score based on utilization, tickets, and nps.
+4. Invoke `renewal-window-evaluator` to evaluates account risk tier based on remaining days to contract renewal.
+5. Correlate findings and provide an explicit verdict: `APPROVED`, `BLOCKED`, or `NEEDS_REVIEW`.
